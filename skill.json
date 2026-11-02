@@ -1,0 +1,23 @@
+{
+  "name": "genpark-personal-agent-auditory-acoustic-decibel-dosimeter-skill",
+  "version": "1.0.0",
+  "description": "Calculates cumulative noise dose percentage under NIOSH and OSHA standards, 8-hour TWA, Leq continuous sound level, and models Temporary Threshold Shift (TTS) recovery.",
+  "tools": [
+    {
+      "name": "calculate_cumulative_noise_dose",
+      "description": "Calculates cumulative noise dose percentage (%), 8-hour TWA, and equivalent sound level (Leq).",
+      "parameters": {
+        "sound_exposures_json": "string (JSON array of sound exposure objects with sound_pressure_level_dba and duration_hours)",
+        "standard": "string (default 'niosh_3db')"
+      }
+    },
+    {
+      "name": "estimate_temporary_threshold_shift_recovery",
+      "description": "Estimates Temporary Threshold Shift (TTS in dB) and quiet recovery time in hours.",
+      "parameters": {
+        "peak_spl_dba": "float (default 98.0)",
+        "exposure_duration_minutes": "float (default 60.0)"
+      }
+    }
+  ]
+}
